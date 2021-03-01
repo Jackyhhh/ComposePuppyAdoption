@@ -59,16 +59,16 @@ fun MyApp() {
     val snackbarHostState = SnackbarHostState()
     val coroutineScope = rememberCoroutineScope()
     Scaffold(
-            topBar = {
-                TopAppBar(
-                        title = {
-                            Text("宠物狗领养系统")
-                        }
-                )
-            },
-            snackbarHost = {
-                SnackbarHost(snackbarHostState)
-            }
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text("宠物狗领养系统")
+                }
+            )
+        },
+        snackbarHost = {
+            SnackbarHost(snackbarHostState)
+        }
     ) {
         val viewModel: MainViewModel = viewModel()
         DogList(viewModel.dogs) { dog ->
@@ -100,4 +100,3 @@ fun DarkPreview() {
         MyApp()
     }
 }
-

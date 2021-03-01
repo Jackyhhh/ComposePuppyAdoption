@@ -43,16 +43,16 @@ import com.example.androiddevchallenge.ui.theme.MyTheme
 @Composable
 fun DogList(dogs: List<Dog>, onDogClick: (Dog) -> Unit = {}) {
     LazyColumn(
-            Modifier.background(MaterialTheme.colors.secondary),
-            contentPadding = PaddingValues(8.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+        Modifier.background(MaterialTheme.colors.secondary),
+        contentPadding = PaddingValues(8.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(dogs) { dog ->
             DogItem(
-                    dog,
-                    Modifier.clickable {
-                        onDogClick(dog)
-                    }.fillMaxWidth()
+                dog,
+                Modifier.clickable {
+                    onDogClick(dog)
+                }.fillMaxWidth()
             )
         }
     }
@@ -63,10 +63,10 @@ fun DogItem(dog: Dog, modifier: Modifier = Modifier) {
     Card(modifier) {
         Row {
             Image(
-                    painterResource(dog.picture),
-                    "Picture of dog: ${dog.name}",
-                    Modifier.size(120.dp),
-                    contentScale = ContentScale.Crop
+                painterResource(dog.picture),
+                "Picture of dog: ${dog.name}",
+                Modifier.size(120.dp),
+                contentScale = ContentScale.Crop
             )
             Column(Modifier.padding(8.dp)) {
                 Text(dog.name, style = MaterialTheme.typography.h4)
@@ -81,18 +81,18 @@ fun DogItem(dog: Dog, modifier: Modifier = Modifier) {
 @Composable
 fun DogListPreview() {
     val dogs = listOf(
-            Dog(
-                    "田田",  "南京",
-                    "成年", "雄性", "比熊犬", R.drawable.bixiong
-            ),
-            Dog(
-                    "小火", "广州",
-                    "幼年", "雄性", "柴犬", R.drawable.chaiquan
-            ),
-            Dog(
-                    "小哈", "武汉",
-                    "成年", "雄性", "哈士奇", R.drawable.hashiqi
-            )
+        Dog(
+            "田田", "南京",
+            "成年", "雄性", "比熊犬", R.drawable.bixiong
+        ),
+        Dog(
+            "小火", "广州",
+            "幼年", "雄性", "柴犬", R.drawable.chaiquan
+        ),
+        Dog(
+            "小哈", "武汉",
+            "成年", "雄性", "哈士奇", R.drawable.hashiqi
+        )
     )
     MyTheme {
         DogList(dogs)
@@ -103,18 +103,18 @@ fun DogListPreview() {
 @Composable
 fun DogListPreviewDark() {
     val dogs = listOf(
-            Dog(
-                    "田田",  "南京",
-                    "成年", "雄性", "比熊犬", R.drawable.bixiong
-            ),
-            Dog(
-                    "小火", "广州",
-                    "幼年", "雄性", "柴犬", R.drawable.chaiquan
-            ),
-            Dog(
-                    "小哈", "武汉",
-                    "成年", "雄性", "哈士奇", R.drawable.hashiqi
-            )
+        Dog(
+            "田田", "南京",
+            "成年", "雄性", "比熊犬", R.drawable.bixiong
+        ),
+        Dog(
+            "小火", "广州",
+            "幼年", "雄性", "柴犬", R.drawable.chaiquan
+        ),
+        Dog(
+            "小哈", "武汉",
+            "成年", "雄性", "哈士奇", R.drawable.hashiqi
+        )
     )
     MyTheme(darkTheme = true) {
         DogList(dogs)
@@ -126,10 +126,10 @@ fun DogListPreviewDark() {
 fun DogItemPreview() {
     MyTheme {
         DogItem(
-                Dog(
-                        "田田",  "南京",
-                        "成年", "雄性", "比熊犬", R.drawable.bixiong
-                )
+            Dog(
+                "田田", "南京",
+                "成年", "雄性", "比熊犬", R.drawable.bixiong
+            )
         )
     }
 }
@@ -139,10 +139,10 @@ fun DogItemPreview() {
 fun DogItemPreviewDark() {
     MyTheme(darkTheme = true) {
         DogItem(
-                Dog(
-                        "田田",  "南京",
-                        "成年", "雄性", "比熊犬", R.drawable.bixiong
-                )
+            Dog(
+                "田田", "南京",
+                "成年", "雄性", "比熊犬", R.drawable.bixiong
+            )
         )
     }
 }

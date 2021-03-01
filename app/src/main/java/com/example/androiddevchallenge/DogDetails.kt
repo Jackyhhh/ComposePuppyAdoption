@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package example.androiddevchallenge
 
 import androidx.compose.foundation.Image
@@ -39,22 +54,22 @@ import com.example.androiddevchallenge.R
 @Composable
 fun DogDetails(dog: Dog, onAdopt: (Dog) -> Unit = {}) {
     Column(
-            Modifier
-                    .fillMaxSize()
-                    .background(MaterialTheme.colors.secondary)
+        Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.secondary)
     ) {
         Box {
             Image(
-                    painterResource(dog.picture),
-                    "Dog picture: ${dog.name}",
-                    Modifier.aspectRatio(1f),
-                    contentScale = ContentScale.Crop
+                painterResource(dog.picture),
+                "Dog picture: ${dog.name}",
+                Modifier.aspectRatio(1f),
+                contentScale = ContentScale.Crop
             )
             Button(
-                    { onAdopt(dog) },
-                    Modifier
-                            .align(Alignment.BottomCenter)
-                            .padding(16.dp)
+                { onAdopt(dog) },
+                Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(16.dp)
             ) {
                 Text(text = "申请领养")
             }
@@ -75,9 +90,9 @@ fun DogDetails(dog: Dog, onAdopt: (Dog) -> Unit = {}) {
 @Composable
 fun DogDetailsPreview() {
     DogDetails(
-            Dog(
-                    "田田",  "南京",
-                    "成年", "雄性", "比熊犬", R.drawable.bixiong
-            )
+        Dog(
+            "田田", "南京",
+            "成年", "雄性", "比熊犬", R.drawable.bixiong
+        )
     )
 }
